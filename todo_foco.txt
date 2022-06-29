@@ -1,0 +1,8 @@
+- Make the favorite plants.
+- Make a good database of plants.
+- Make a good description part and explanation on the detail page.
+- Make the more plants page.
+- Make the more button direct to the more button but with a filter of just the featured plants showing.
+- finish the drawer, even if still useless repetitive.
+- make the search working with the database and filtering the plants.
+- make the shopping cart working.
