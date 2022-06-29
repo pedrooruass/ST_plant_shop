@@ -1,4 +1,4 @@
-# training_app_clean
+# ST Plant Shop
 
 A new Flutter project.
 
