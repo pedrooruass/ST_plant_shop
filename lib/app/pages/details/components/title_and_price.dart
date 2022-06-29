@@ -15,7 +15,7 @@ class TitleAndPrice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+      padding:const EdgeInsets.symmetric(horizontal: defaultPadding),
       child: Row(
         children: [
           RichText(
@@ -28,7 +28,7 @@ class TitleAndPrice extends StatelessWidget {
                       .headline4
                       ?.copyWith(color: textColor, fontWeight: FontWeight.bold),
                 ),
-                 TextSpan(
+                TextSpan(
                   text: country,
                   style: const TextStyle(
                     fontSize: 20,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/app/core/constants.dart';
+import 'package:training_app_clean/app/pages/details/details_page.dart';
 
 class RecommendedPlantCard extends StatelessWidget {
   const RecommendedPlantCard({
@@ -8,13 +9,10 @@ class RecommendedPlantCard extends StatelessWidget {
     required this.title,
     required this.country,
     required this.price,
-    required this.press,
   }) : super(key: key);
 
   final String image, title, country;
   final int price;
-  final void Function() press;
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -29,7 +27,19 @@ class RecommendedPlantCard extends StatelessWidget {
         children: [
           Image.asset(image),
           GestureDetector(
-            onTap: press,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsPage(
+                    title: title,
+                    country: country,
+                    image: image,
+                    price: price,
+                  ),
+                ),
+              );
+            },
             child: Container(
               padding: const EdgeInsets.all(defaultPadding / 2),
               decoration: BoxDecoration(
