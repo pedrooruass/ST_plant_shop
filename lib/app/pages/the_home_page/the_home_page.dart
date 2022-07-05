@@ -4,14 +4,9 @@ import 'package:training_app_clean/app/pages/components/universal_app_bar.dart';
 import 'package:training_app_clean/app/pages/components/universal_drawer.dart';
 import 'package:training_app_clean/app/pages/the_home_page/components/body.dart';
 
-class TheHomePage extends StatefulWidget {
+class TheHomePage extends StatelessWidget {
   const TheHomePage({Key? key}) : super(key: key);
 
-  @override
-  State<TheHomePage> createState() => _TheHomePageState();
-}
-
-class _TheHomePageState extends State<TheHomePage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -20,7 +15,7 @@ class _TheHomePageState extends State<TheHomePage> {
       ),
       body: Body(),
       drawer: UniversalDrawer(
-        drawerBackgroundColor: drawerColor1 ,
+        drawerBackgroundColor: drawerColor1,
       ),
     );
   }

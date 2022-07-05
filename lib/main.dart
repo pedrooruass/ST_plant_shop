@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:training_app_clean/app/core/constants.dart';
+import 'package:training_app_clean/app/models/liked.dart';
 import 'package:training_app_clean/app/pages/page_changer.dart';
+
 void main(List<String> args) => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -8,15 +11,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Training App',
-      theme: ThemeData(
-        primaryColor: primaryColor,
-        textTheme: Theme.of(context).textTheme.apply(bodyColor: textColor),
-        visualDensity: VisualDensity.adaptivePlatformDensity, // ?
+    return ChangeNotifierProvider(
+      create: (context) {
+        return Liked();
+      },
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Training App',
+        theme: ThemeData(
+          primaryColor: primaryColor,
+          textTheme: Theme.of(context).textTheme.apply(bodyColor: textColor),
+          visualDensity: VisualDensity.adaptivePlatformDensity, // ?
+        ),
+        home: const PageChanger(),
       ),
-      home: const PageChanger(),
     );
   }
 }

@@ -29,8 +29,8 @@ class HeaderWithSearchBox extends StatelessWidget {
             decoration: const BoxDecoration(
               color: primaryColor,
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(36),
-                bottomRight: Radius.circular(36),
+                bottomLeft: Radius.circular(33),
+                bottomRight: Radius.circular(33),
               ),
             ),
             child: Row(
@@ -41,7 +41,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
                 const Spacer(),
-                Image.asset('assets/images/plant_logo.png'),
+                Image.asset('assets/images/plant_logo.png', height: 50),
               ],
             ),
           ),
