@@ -29,6 +29,13 @@ class FeaturePlantCard extends StatelessWidget {
             image: AssetImage(image),
             fit: BoxFit.cover,
           ),
+          boxShadow: [
+            BoxShadow(
+              color: primaryColor.withOpacity(0.23),
+              offset: const Offset(-10, 20),
+              blurRadius: 5,
+            ),
+          ],
         ),
       ),
     );

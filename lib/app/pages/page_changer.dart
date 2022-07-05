@@ -42,21 +42,29 @@ class _PageChangerState extends State<PageChanger> {
           });
         },
         selectedFontSize: 15,
-        unselectedFontSize: 13,
+        // selectedIconTheme: IconThemeData(
+        //   color: Colors.white,
+        // ),
         iconSize: 25,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.fan, color: Colors.white),
+            icon: Icon(
+              Icons.home_outlined,
+              size: 30,
+            ),
+            activeIcon: Icon(FontAwesomeIcons.leaf),
             label: 'Home',
             backgroundColor: primaryColor,
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.heart, color: Colors.white),
+            icon: Icon(FontAwesomeIcons.heart),
+            activeIcon: Icon(FontAwesomeIcons.solidHeart),
             label: 'Liked',
             backgroundColor: secondaryColor,
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.userTie, color: Colors.white),
+            icon: Icon(FontAwesomeIcons.user),
+            activeIcon: Icon(FontAwesomeIcons.userTie),
             label: 'Profile',
             backgroundColor: primaryColor,
           ),

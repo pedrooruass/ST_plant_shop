@@ -86,7 +86,7 @@ class RecommendedCard extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: '${plantName}\n'.toUpperCase(),
+                          text: '$plantName\n'.toUpperCase(),
                           style: Theme.of(context).textTheme.button,
                         ),
                         TextSpan(
@@ -100,7 +100,7 @@ class RecommendedCard extends StatelessWidget {
                   ),
                   const Spacer(),
                   Text(
-                    '\$${price}',
+                    '\$$price',
                     style: Theme.of(context)
                         .textTheme
                         .button

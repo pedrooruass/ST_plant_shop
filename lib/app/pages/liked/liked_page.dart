@@ -12,6 +12,7 @@ class LikedPage extends StatelessWidget {
     return const Scaffold(
       appBar: UniversalAppBar(
         backgroundColor: secondaryColor,
+        title: 'Favorites',
       ),
       body: LikedBody(),
       drawer: UniversalDrawer(
