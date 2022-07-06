@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:training_app_clean/app/core/constants.dart';
-import 'package:training_app_clean/app/pages/liked/liked_page.dart';
+import 'package:training_app_clean/app/pages/favorite/favorite_page.dart';
 import 'package:training_app_clean/app/pages/profile/profile_page.dart';
 import 'package:training_app_clean/app/pages/the_home_page/the_home_page.dart';
 
@@ -42,9 +42,6 @@ class _PageChangerState extends State<PageChanger> {
           });
         },
         selectedFontSize: 15,
-        // selectedIconTheme: IconThemeData(
-        //   color: Colors.white,
-        // ),
         iconSize: 25,
         items: const [
           BottomNavigationBarItem(

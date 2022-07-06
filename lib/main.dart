@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:training_app_clean/app/core/constants.dart';
-import 'package:training_app_clean/app/models/liked.dart';
+import 'package:training_app_clean/app/models/plants_list.dart';
 import 'package:training_app_clean/app/pages/page_changer.dart';
 
 void main(List<String> args) => runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) {
-        return Liked();
+        return PlantList();
       },
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

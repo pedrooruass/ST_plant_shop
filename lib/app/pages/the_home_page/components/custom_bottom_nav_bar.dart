@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:training_app_clean/app/core/constants.dart';
-import 'package:training_app_clean/app/pages/liked/liked_page.dart';
+import 'package:training_app_clean/app/pages/favorite/favorite_page.dart';
 import 'package:training_app_clean/app/pages/the_home_page/the_home_page.dart';
 
 class CtmBottomNavBar extends StatelessWidget {

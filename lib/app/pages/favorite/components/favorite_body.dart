@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:training_app_clean/app/core/constants.dart';
-import 'package:training_app_clean/app/models/liked.dart';
+import 'package:training_app_clean/app/models/plants_list.dart';
 
 class LikedBody extends StatelessWidget {
   const LikedBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Liked liked = Provider.of<Liked>(context);
     return Scaffold(
-      body: Consumer<Liked>(
-        builder: (BuildContext context, Liked value, Widget? child) {
+      body: Consumer<PlantList>(
+        builder: (BuildContext context, PlantList plantList, Widget? child) {
           return GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 1.5,
             ),
             padding: const EdgeInsets.only(right: 8), // Adapitado o jeito do padding, PT 1
-            itemCount: liked.likedList.length,
+            itemCount: plantList.favoritePlants().length,
             itemBuilder: (context, index) {
               return Container(
                 alignment: Alignment.center,
@@ -29,7 +28,7 @@ class LikedBody extends StatelessWidget {
                 ), // PT 2 kakakakka
                 color: primaryColor,
                 child: Text(
-                  liked.likedList[index],
+                  plantList.favoritePlants()[index].name,
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 25,
