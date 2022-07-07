@@ -13,6 +13,8 @@ class FavoritesPage extends StatelessWidget {
       appBar: UniversalAppBar(
         backgroundColor: secondaryColor,
         title: 'Favorites',
+        haveCart: true,
+        
       ),
       body: const FavoritesBody(),
       drawer: const UniversalDrawer(

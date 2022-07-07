@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:training_app_clean/app/core/constants.dart';
+import 'package:training_app_clean/app/pages/page_changer.dart';
 
 class UniversalAppBar extends StatelessWidget implements PreferredSizeWidget {
   UniversalAppBar({
     Key? key,
     this.title,
     required this.backgroundColor,
-    this.haveIcons = true,
+    this.haveDrawer = false,
+    this.haveCart = false,
+    this.haveLeading = true,
+    this.isHomePage = false,
   }) : super(key: key);
 
   final dynamic title;
   final Color backgroundColor;
-  bool haveIcons;
+  bool haveDrawer;
+  bool haveCart;
+  bool haveLeading;
+  bool isHomePage;
   @override
   Size get preferredSize => const Size.fromHeight(55.0);
 
@@ -32,19 +39,30 @@ class UniversalAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             )
           : null,
-      leading: haveIcons
+      leading: haveLeading
           ? Builder(
               builder: (BuildContext context) {
                 return IconButton(
-                  icon: SvgPicture.asset('assets/icons/menu.svg'),
-                  onPressed: () => Scaffold.of(context).openDrawer(),
+                  icon: isHomePage
+                      ? SvgPicture.asset('assets/icons/menu.svg')
+                      : const Icon(Icons.arrow_back_ios),
+                  onPressed: haveDrawer
+                      ? () => Scaffold.of(context).openDrawer()
+                      : () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PageChanger(),
+                            ),
+                          );
+                        },
                   tooltip:
                       MaterialLocalizations.of(context).openAppDrawerTooltip,
                 );
               },
             )
           : null,
-      actions: haveIcons
+      actions: haveCart
           ? [
               Padding(
                 padding: const EdgeInsets.only(right: defaultPadding / 2),

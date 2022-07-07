@@ -13,7 +13,6 @@ class ProfilePage extends StatelessWidget {
       appBar: UniversalAppBar(
         backgroundColor: primaryColor,
         title: 'Profile',
-        haveIcons: false,
       ),
       body: const ProfileBody(),
     );

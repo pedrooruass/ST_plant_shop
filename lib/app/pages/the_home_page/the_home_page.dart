@@ -12,6 +12,9 @@ class TheHomePage extends StatelessWidget {
     return Scaffold(
       appBar: UniversalAppBar(
         backgroundColor: primaryColor,
+        haveCart: true,
+        haveDrawer: true,
+        isHomePage: true,
       ),
       body: const Body(),
       drawer: const UniversalDrawer(

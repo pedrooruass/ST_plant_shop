@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:training_app_clean/app/core/constants.dart';
 import 'package:training_app_clean/app/models/plants_list.dart';
-import 'package:training_app_clean/app/pages/favorite/components/favorite_grid_card.dart';
+import 'package:training_app_clean/app/pages/favorite/components/favorite_card.dart';
 
 class FavoritesBody extends StatelessWidget {
   const FavoritesBody({Key? key}) : super(key: key);
@@ -12,20 +12,48 @@ class FavoritesBody extends StatelessWidget {
     return Scaffold(
       body: Consumer<PlantList>(
         builder: (BuildContext context, PlantList plantList, Widget? child) {
-          return GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 1.5,
-            ),
-            padding: const EdgeInsets.only(
-                right: 8), // Adapitado o jeito do padding, PT 1
-            itemCount: plantList.favoritePlants().length,
-            itemBuilder: (context, index) {
-              return  FavoriteGridCard(
-                plantList: plantList,
-                index: index,
-              );
-            },
+          return Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              ListView.builder(
+                padding: const EdgeInsets.all(12),
+                itemCount: plantList.favoritePlants().length,
+                itemBuilder: (context, index) {
+                  return FavoriteCard(
+                    plantList: plantList,
+                    index: index,
+                  );
+                },
+              ),
+              GestureDetector(
+                child: Container(
+                  height: 50,
+                  width: 250,
+                  margin: const EdgeInsets.only(bottom: defaultPadding),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      color: secondaryColor,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.5),
+                          blurRadius: 35,
+                          offset: Offset(0, 75),
+                          spreadRadius: 90,
+                        )
+                      ]),
+                  child: const Text(
+                    'add to cart',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           );
         },
       ),
