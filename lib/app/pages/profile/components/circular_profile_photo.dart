@@ -18,7 +18,7 @@ class CircularProfilePhoto extends StatelessWidget {
           CircleAvatar(
             backgroundColor: Colors.white,
             backgroundImage: AssetImage(image),
-            radius: 55,
+            radius: 50,
           ),
           Container(
             height: 40,

@@ -9,12 +9,12 @@ class TheHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       appBar: UniversalAppBar(
         backgroundColor: primaryColor,
       ),
-      body: Body(),
-      drawer: UniversalDrawer(
+      body: const Body(),
+      drawer: const UniversalDrawer(
         drawerBackgroundColor: drawerColor1,
       ),
     );

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:training_app_clean/app/core/constants.dart';
 import 'package:training_app_clean/app/models/plants_list.dart';
+import 'package:training_app_clean/app/pages/favorite/components/favorite_grid_card.dart';
 
-class LikedBody extends StatelessWidget {
-  const LikedBody({Key? key}) : super(key: key);
+class FavoritesBody extends StatelessWidget {
+  const FavoritesBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,24 +17,13 @@ class LikedBody extends StatelessWidget {
               crossAxisCount: 2,
               childAspectRatio: 1.5,
             ),
-            padding: const EdgeInsets.only(right: 8), // Adapitado o jeito do padding, PT 1
+            padding: const EdgeInsets.only(
+                right: 8), // Adapitado o jeito do padding, PT 1
             itemCount: plantList.favoritePlants().length,
             itemBuilder: (context, index) {
-              return Container(
-                alignment: Alignment.center,
-                margin: const EdgeInsets.only( 
-                  left: 8,
-                  bottom: 8,
-                  top: 8,
-                ), // PT 2 kakakakka
-                color: primaryColor,
-                child: Text(
-                  plantList.favoritePlants()[index].name,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                  ),
-                ),
+              return  FavoriteGridCard(
+                plantList: plantList,
+                index: index,
               );
             },
           );
@@ -42,6 +32,8 @@ class LikedBody extends StatelessWidget {
     );
   }
 }
+
+
 
 // escolher o nicho do produto
 // procurar e analisar os concorrentes

@@ -4,14 +4,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:training_app_clean/app/core/constants.dart';
 
 class UniversalAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const UniversalAppBar({
+  UniversalAppBar({
     Key? key,
     this.title,
     required this.backgroundColor,
+    this.haveIcons = true,
   }) : super(key: key);
 
   final dynamic title;
   final Color backgroundColor;
+  bool haveIcons;
   @override
   Size get preferredSize => const Size.fromHeight(55.0);
 
@@ -30,24 +32,32 @@ class UniversalAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             )
           : null,
-      leading: Builder(
-        builder: (BuildContext context) {
-          return IconButton(
-            icon: SvgPicture.asset('assets/icons/menu.svg'),
-            onPressed: () => Scaffold.of(context).openDrawer(),
-            tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-          );
-        },
-      ),
-      actions: [
-        Padding(
-          padding: const EdgeInsets.only(right: defaultPadding / 2),
-          child: IconButton(
-            icon: const Icon(FontAwesomeIcons.basketShopping, size: 19,),
-            onPressed: () {},
-          ),
-        ),
-      ],
+      leading: haveIcons
+          ? Builder(
+              builder: (BuildContext context) {
+                return IconButton(
+                  icon: SvgPicture.asset('assets/icons/menu.svg'),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                  tooltip:
+                      MaterialLocalizations.of(context).openAppDrawerTooltip,
+                );
+              },
+            )
+          : null,
+      actions: haveIcons
+          ? [
+              Padding(
+                padding: const EdgeInsets.only(right: defaultPadding / 2),
+                child: IconButton(
+                  icon: const Icon(
+                    FontAwesomeIcons.basketShopping,
+                    size: 19,
+                  ),
+                  onPressed: () {},
+                ),
+              ),
+            ]
+          : null,
     );
   }
 }

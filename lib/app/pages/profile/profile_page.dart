@@ -8,13 +8,14 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: primaryColor,
       appBar: UniversalAppBar(
         backgroundColor: primaryColor,
         title: 'Profile',
+        haveIcons: false,
       ),
-      body: ProfileBody(),
+      body: const ProfileBody(),
     );
   }
 }
