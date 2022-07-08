@@ -25,34 +25,36 @@ class FavoritesBody extends StatelessWidget {
                   );
                 },
               ),
-              GestureDetector(
-                child: Container(
-                  height: 50,
-                  width: 250,
-                  margin: const EdgeInsets.only(bottom: defaultPadding),
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      color: secondaryColor,
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(10),
+              plantList.favoritePlants().length > 4
+                  ? GestureDetector(
+                      child: Container(
+                        height: 50,
+                        width: 250,
+                        margin: const EdgeInsets.only(bottom: defaultPadding),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: secondaryColor,
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(10),
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.5),
+                                blurRadius: 35,
+                                offset: const Offset(0, 75),
+                                spreadRadius: 90,
+                              )
+                            ]),
+                        child: const Text(
+                          'add to cart',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.5),
-                          blurRadius: 35,
-                          offset: Offset(0, 75),
-                          spreadRadius: 90,
-                        )
-                      ]),
-                  child: const Text(
-                    'add to cart',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ),
+                    )
+                  : Container(),
             ],
           );
         },

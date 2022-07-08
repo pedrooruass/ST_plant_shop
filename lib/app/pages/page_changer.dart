@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:training_app_clean/app/core/constants.dart';
 import 'package:training_app_clean/app/models/plants_list.dart';
+import 'package:training_app_clean/app/pages/category/category_page.dart';
 import 'package:training_app_clean/app/pages/favorite/favorites_page.dart';
 import 'package:training_app_clean/app/pages/profile/profile_page.dart';
 import 'package:training_app_clean/app/pages/the_home_page/the_home_page.dart';
@@ -30,6 +31,7 @@ class _PageChangerState extends State<PageChanger> {
         physics: const NeverScrollableScrollPhysics(),
         children: const [
           TheHomePage(),
+          CategoryPage(),
           FavoritesPage(),
           ProfilePage(),
         ],
@@ -46,15 +48,22 @@ class _PageChangerState extends State<PageChanger> {
               });
             },
             selectedFontSize: 15,
-            iconSize: 25,
+            iconSize: 30,
             items: [
               const BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home_outlined,
-                  size: 30,
                 ),
                 activeIcon: Icon(FontAwesomeIcons.leaf),
                 label: 'Home',
+                backgroundColor: primaryColor,
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.category_outlined,
+                ),
+                activeIcon: Icon(FontAwesomeIcons.shapes),
+                label: 'Category',
                 backgroundColor: primaryColor,
               ),
               BottomNavigationBarItem(
@@ -63,7 +72,6 @@ class _PageChangerState extends State<PageChanger> {
                   children: [
                     const Icon(
                       FontAwesomeIcons.heart,
-                      size: 30,
                     ),
                     Positioned(
                       right: -9,
@@ -83,7 +91,7 @@ class _PageChangerState extends State<PageChanger> {
                   ],
                 ),
                 activeIcon: const Icon(FontAwesomeIcons.solidHeart),
-                label: 'Liked',
+                label: 'Favorites',
                 backgroundColor: secondaryColor,
               ),
               const BottomNavigationBarItem(

@@ -59,7 +59,7 @@ class PlantList extends ChangeNotifier {
   }
 
   removeFavoritePlant(int index) {
-    plants[index].isFavorite = false;
+    favoritePlants()[index].isFavorite = false;
     notifyListeners();
   }
 }
