@@ -82,7 +82,7 @@ class PlantListProvider extends ChangeNotifier {
 
   List<Plant> searchPlants(String plantName) {
     return plants.values
-        .where((plant) => plant.name.startsWith(plantName))
+        .where((plant) => plant.name.toLowerCase().startsWith(plantName))
         .toList();
   }
 }

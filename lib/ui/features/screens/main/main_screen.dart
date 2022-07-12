@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -5,10 +6,13 @@ import 'package:training_app_clean/application/providers/favorite_plant_list_pro
 import 'package:training_app_clean/application/providers/featured_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/recommended_plant_list_provider.dart';
+import 'package:training_app_clean/ui/features/pages/search_page.dart';
+import 'package:training_app_clean/ui/features/pages/search_try.dart';
 import 'package:training_app_clean/ui/features/screens/category/category_screen.dart';
 import 'package:training_app_clean/ui/features/screens/favorites/favorites_screen.dart';
 import 'package:training_app_clean/ui/features/screens/home/home_screen.dart';
 import 'package:training_app_clean/ui/features/screens/profile/profile_screen.dart';
+import 'package:training_app_clean/ui/features/widgets/badge_icon.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 
 class MainScreen extends StatefulWidget {
@@ -42,6 +46,7 @@ class _MainScreenState extends State<MainScreen> {
           controller: pageController,
           physics: const NeverScrollableScrollPhysics(),
           children: const [
+            // SearchTry(),
             HomeScreen(),
             // Container(
             //   alignment: Alignment.center,
@@ -94,31 +99,18 @@ class _MainScreenState extends State<MainScreen> {
                 label: 'Category',
                 backgroundColor: primaryColor,
               ),
+              //Colocar plugin badges
               BottomNavigationBarItem(
-                icon: Stack(
-                  alignment: Alignment.topRight,
-                  children: [
-                    const Icon(
-                      FontAwesomeIcons.heart,
-                    ),
-                    Positioned(
-                      right: -9,
-                      top: -9,
-                      child: CircleAvatar(
-                        radius: 10,
-                        backgroundColor: Colors.red,
-                        child: Text(
-                          favoritePlantListProvider.plantIds.length.toString(),
-                          style: const TextStyle(
-                            fontSize: 10,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ],
+                icon: BadgeIcon(
+                  icon: Icons.favorite_border_outlined,
+                  badgeContent:
+                      favoritePlantListProvider.plantIds.length.toString(),
                 ),
-                activeIcon: const Icon(FontAwesomeIcons.solidHeart),
+                activeIcon: BadgeIcon(
+                  icon: FontAwesomeIcons.solidHeart,
+                  badgeContent:
+                      favoritePlantListProvider.plantIds.length.toString(),
+                ),
                 label: 'Favorites',
                 backgroundColor: secondaryColor,
               ),

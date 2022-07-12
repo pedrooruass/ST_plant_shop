@@ -14,14 +14,6 @@ class FavoritesScreen extends StatelessWidget {
         backgroundColor: secondaryColor,
         title: 'Favorites',
         haveCart: true,
-        onLeadingPress: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const MainScreen(),
-            ),
-          );
-        },
       ),
       body: const FavoritesBody(),
     );

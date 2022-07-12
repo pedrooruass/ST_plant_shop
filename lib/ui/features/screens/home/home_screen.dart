@@ -13,8 +13,7 @@ class HomeScreen extends StatelessWidget {
       appBar: UniversalAppBar(
         backgroundColor: primaryColor,
         haveCart: true,
-        haveDrawer: true,
-        isHomePage: true,
+        haveLeading: true,
       ),
       body: const HomeBody(),
       drawer: const UniversalDrawer(

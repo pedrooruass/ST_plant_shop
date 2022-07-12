@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -8,22 +9,16 @@ class UniversalAppBar extends StatelessWidget implements PreferredSizeWidget {
     Key? key,
     this.title,
     required this.backgroundColor,
-    this.haveDrawer = false,
     this.haveCart = false,
-    this.haveLeading = true,
-    this.isHomePage = false,
     this.isTextString = true,
-    this.onLeadingPress,
+    this.haveLeading = false,
   }) : super(key: key);
 
   final dynamic title;
   final Color backgroundColor;
-  bool haveDrawer;
   bool haveCart;
   bool haveLeading;
-  bool isHomePage;
   bool isTextString;
-  void Function()? onLeadingPress;
   @override
   Size get preferredSize => const Size.fromHeight(55.0);
 
@@ -46,12 +41,8 @@ class UniversalAppBar extends StatelessWidget implements PreferredSizeWidget {
           : title,
       leading: haveLeading
           ? IconButton(
-              icon: isHomePage
-                  ? SvgPicture.asset('assets/icons/menu.svg')
-                  : const Icon(Icons.arrow_back_ios),
-              onPressed: haveDrawer
-                  ? () => Scaffold.of(context).openDrawer()
-                  : onLeadingPress!,
+              icon: SvgPicture.asset('assets/icons/menu.svg'),
+              onPressed: () => Scaffold.of(context).openDrawer(),
               tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
             )
           : null,
@@ -60,9 +51,18 @@ class UniversalAppBar extends StatelessWidget implements PreferredSizeWidget {
               Padding(
                 padding: const EdgeInsets.only(right: defaultPadding / 2),
                 child: IconButton(
-                  icon: const Icon(
-                    FontAwesomeIcons.basketShopping,
-                    size: 19,
+                  icon: Badge(
+                    badgeContent: const Text(
+                      '0',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                      ),
+                    ),
+                    child: const Icon(
+                      FontAwesomeIcons.basketShopping,
+                      size: 19,
+                    ),
                   ),
                   onPressed: () {},
                 ),
