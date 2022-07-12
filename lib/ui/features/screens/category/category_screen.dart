@@ -13,12 +13,11 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
-
   int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    final pageController = PageController(initialPage: 0);    
+    final pageController = PageController(initialPage: 0);
     return Scaffold(
       appBar: UniversalAppBar(
         backgroundColor: Colors.transparent,
@@ -32,7 +31,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 name: 'Herbs',
                 id: '1',
               ),
-              cardColor: primaryColor, // ternaria com currentIndex
+              cardColor: currentIndex == 0
+                  ? primaryColor
+                  : Colors.grey, // ternaria com currentIndex
               onCategoryTap: () {
                 setState(() {
                   currentIndex = 0;
@@ -45,9 +46,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 name: 'Trees',
                 id: '2',
               ),
-              cardColor: secondaryColor,
+              cardColor: currentIndex == 1 ? primaryColor : Colors.grey,
               onCategoryTap: () {
-                 setState(() {
+                setState(() {
                   currentIndex = 1;
                 });
                 pageController.jumpToPage(1);
@@ -58,9 +59,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 name: 'Creepers',
                 id: '3',
               ),
-              cardColor: Colors.brown,
+              cardColor: currentIndex == 2 ? primaryColor : Colors.grey,
               onCategoryTap: () {
-                 setState(() {
+                setState(() {
                   currentIndex = 2;
                 });
                 pageController.jumpToPage(2);
