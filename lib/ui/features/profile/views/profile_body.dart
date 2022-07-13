@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:training_app_clean/ui/features/screens/profile/widgets/profile_circular_photo.dart';
-import 'package:training_app_clean/ui/features/screens/profile/widgets/profile_white_background.dart';
-
+import 'package:training_app_clean/ui/features/profile/views/profile_circular_photo.dart';
+import 'package:training_app_clean/ui/features/profile/views/profile_white_background.dart';
 class ProfileBody extends StatelessWidget {
   const ProfileBody({Key? key}) : super(key: key);
 

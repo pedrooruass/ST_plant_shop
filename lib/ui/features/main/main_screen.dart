@@ -5,10 +5,10 @@ import 'package:training_app_clean/application/providers/favorite_plant_list_pro
 import 'package:training_app_clean/application/providers/featured_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/recommended_plant_list_provider.dart';
-import 'package:training_app_clean/ui/features/screens/category/category_screen.dart';
-import 'package:training_app_clean/ui/features/screens/favorites/favorites_screen.dart';
-import 'package:training_app_clean/ui/features/screens/home/home_screen.dart';
-import 'package:training_app_clean/ui/features/screens/profile/profile_screen.dart';
+import 'package:training_app_clean/ui/features/category/category_screen.dart';
+import 'package:training_app_clean/ui/features/favorites/favorites_screen.dart';
+import 'package:training_app_clean/ui/features/home/home_screen.dart';
+import 'package:training_app_clean/ui/features/profile/profile_screen.dart';
 import 'package:training_app_clean/ui/features/widgets/badge_icon.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 

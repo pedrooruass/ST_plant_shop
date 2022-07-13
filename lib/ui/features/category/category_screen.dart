@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/entities/category.dart';
-import 'package:training_app_clean/ui/features/screens/category/widget/category_app_bar_card.dart';
-import 'package:training_app_clean/ui/features/screens/category/widget/page_route_app_bar.dart';
+import 'package:training_app_clean/ui/features/category/views/category_app_bar_card.dart';
+import 'package:training_app_clean/ui/features/category/views/page_route_app_bar.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 import 'package:training_app_clean/ui/features/widgets/universal_app_bar.dart';
 
@@ -19,7 +19,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
     final pageController = PageController(initialPage: 0);
     return Scaffold(
-        backgroundColor: primaryColor,
+      backgroundColor: primaryColor,
       appBar: UniversalAppBar(
         backgroundColor: primaryColor,
         haveLeading: false,

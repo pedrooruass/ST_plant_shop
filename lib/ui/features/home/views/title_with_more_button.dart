@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_app_clean/ui/features/screens/home/widgets/title_with_custom_underline.dart';
+import 'package:training_app_clean/ui/features/home/views/title_with_custom_underline.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 class HomeSubtitleWithMoreButton extends StatelessWidget {
   const HomeSubtitleWithMoreButton({

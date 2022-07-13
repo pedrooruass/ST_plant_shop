@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:training_app_clean/ui/features/screens/home/widgets/header_with_search_box.dart';
-import 'package:training_app_clean/ui/features/screens/home/widgets/home_featured_plants.dart';
-import 'package:training_app_clean/ui/features/screens/home/widgets/home_recommended_plants.dart';
-import 'package:training_app_clean/ui/features/screens/home/widgets/title_with_more_button.dart';
+import 'package:training_app_clean/ui/features/home/views/header_with_search_box.dart';
+import 'package:training_app_clean/ui/features/home/views/home_featured_plants.dart';
+import 'package:training_app_clean/ui/features/home/views/home_recommended_plants.dart';
+import 'package:training_app_clean/ui/features/home/views/title_with_more_button.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);

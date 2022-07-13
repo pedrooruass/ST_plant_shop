@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_app_clean/ui/features/screens/favorites/widgets/favorites_body.dart';
+import 'package:training_app_clean/ui/features/favorites/views/favorites_body.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 import 'package:training_app_clean/ui/features/widgets/universal_app_bar.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_app_clean/ui/features/screens/main/main_screen.dart';
+import 'package:training_app_clean/ui/features/main/main_screen.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 
 void main(List<String> args) => runApp(const MyApp());

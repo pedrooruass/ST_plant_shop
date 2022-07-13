@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/entities/plant.dart';
-import 'package:training_app_clean/ui/features/pages/details/details_page.dart';
+import 'package:training_app_clean/ui/features/details/details_page.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 
 class CustomSearchDelegate extends SearchDelegate {

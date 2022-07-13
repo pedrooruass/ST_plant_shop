@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:training_app_clean/ui/features/pages/details/widgets/details_icon_card.dart';
+import 'package:training_app_clean/ui/features/details/views/details_icon_card.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 
 class DetailsImageAndIcons extends StatelessWidget {

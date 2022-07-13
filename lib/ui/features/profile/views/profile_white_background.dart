@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:training_app_clean/ui/features/screens/profile/widgets/profile_tile_sub_screens.dart';
+import 'package:training_app_clean/ui/features/profile/views/profile_tile_sub_screens.dart';
 
 class ProfileWhiteBackground extends StatelessWidget {
   const ProfileWhiteBackground({

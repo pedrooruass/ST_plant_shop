@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/entities/plant.dart';
-import 'package:training_app_clean/ui/features/pages/details/widgets/details_buy_now_bottom_line.dart';
-import 'package:training_app_clean/ui/features/pages/details/widgets/details_image_and_icons.dart';
-import 'package:training_app_clean/ui/features/pages/details/widgets/details_title_and_price.dart';
+import 'package:training_app_clean/ui/features/details/views/details_buy_now_bottom_line.dart';
+import 'package:training_app_clean/ui/features/details/views/details_image_and_icons.dart';
+import 'package:training_app_clean/ui/features/details/views/details_title_and_price.dart';
 
 class PlantDetailsPage extends StatelessWidget {
   const PlantDetailsPage({

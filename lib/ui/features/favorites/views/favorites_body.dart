@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:training_app_clean/application/providers/favorite_plant_list_provider.dart';
-import 'package:training_app_clean/ui/features/screens/favorites/widgets/favorite_card.dart';
+import 'package:training_app_clean/ui/features/favorites/views/favorite_card.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 
 class FavoritesBody extends StatelessWidget {
