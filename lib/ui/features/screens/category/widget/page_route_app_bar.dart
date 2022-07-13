@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/entities/category.dart';
-import 'package:training_app_clean/ui/features/pages/categories/sub_pages/category_page.dart';
+import 'package:training_app_clean/ui/features/categories/sub_pages/category_page.dart';
+
 class PageRouteAppBar extends StatelessWidget {
   PageRouteAppBar({
     Key? key,

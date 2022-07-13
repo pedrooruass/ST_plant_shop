@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:training_app_clean/application/providers/plant_list_provider.dart';
-import 'package:training_app_clean/domain/entities/plant.dart';
-import 'package:training_app_clean/ui/features/pages/search_page.dart';
+import 'package:training_app_clean/ui/features/screens/home/widgets/custom_search_delegate.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 
 class HomeHeaderWithSearchBox extends StatelessWidget {
@@ -43,7 +42,7 @@ class HomeHeaderWithSearchBox extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    'Hi Ductusshopy!',
+                    'Hi PlantShop!',
                     style: Theme.of(context).textTheme.headline5?.copyWith(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
@@ -76,8 +75,14 @@ class HomeHeaderWithSearchBox extends StatelessWidget {
                   children: [
                     Expanded(
                       child: TextField(
-                        onChanged: (plantName) {
-                          plantListProvider.searchPlants(plantName);
+                        onTap: () {
+                          showSearch(
+                            context: context,
+                            delegate: CustomSearchDelegate(
+                              plantList:
+                                  plantListProvider.plants.values.toList(),
+                            ),
+                          );
                         },
                         decoration: InputDecoration(
                           hintText: 'Search',

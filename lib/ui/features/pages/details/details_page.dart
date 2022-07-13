@@ -4,8 +4,8 @@ import 'package:training_app_clean/ui/features/pages/details/widgets/details_buy
 import 'package:training_app_clean/ui/features/pages/details/widgets/details_image_and_icons.dart';
 import 'package:training_app_clean/ui/features/pages/details/widgets/details_title_and_price.dart';
 
-class DetailsPage extends StatelessWidget {
-  const DetailsPage({
+class PlantDetailsPage extends StatelessWidget {
+  const PlantDetailsPage({
     Key? key,
     required this.plant,
   }) : super(key: key);

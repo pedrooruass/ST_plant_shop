@@ -1,4 +1,3 @@
-import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -6,8 +5,6 @@ import 'package:training_app_clean/application/providers/favorite_plant_list_pro
 import 'package:training_app_clean/application/providers/featured_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/recommended_plant_list_provider.dart';
-import 'package:training_app_clean/ui/features/pages/search_page.dart';
-import 'package:training_app_clean/ui/features/pages/search_try.dart';
 import 'package:training_app_clean/ui/features/screens/category/category_screen.dart';
 import 'package:training_app_clean/ui/features/screens/favorites/favorites_screen.dart';
 import 'package:training_app_clean/ui/features/screens/home/home_screen.dart';
@@ -112,7 +109,7 @@ class _MainScreenState extends State<MainScreen> {
                       favoritePlantListProvider.plantIds.length.toString(),
                 ),
                 label: 'Favorites',
-                backgroundColor: secondaryColor,
+                backgroundColor: primaryColor,
               ),
               const BottomNavigationBarItem(
                 icon: Icon(FontAwesomeIcons.user),

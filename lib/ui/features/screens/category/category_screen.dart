@@ -19,8 +19,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
     final pageController = PageController(initialPage: 0);
     return Scaffold(
+        backgroundColor: primaryColor,
       appBar: UniversalAppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: primaryColor,
         haveLeading: false,
         isTextString: false,
         title: Row(

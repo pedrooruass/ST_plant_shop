@@ -33,7 +33,7 @@ class FavoritesBody extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: defaultPadding),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: secondaryColor,
+                    color: primaryColor,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(10),
                     ),

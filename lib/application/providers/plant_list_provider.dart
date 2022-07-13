@@ -8,40 +8,39 @@ class PlantListProvider extends ChangeNotifier {
       id: '1',
       categoryId: Category(id: '1'),
       imageAsset: 'assets/images/image_1.png',
-      name: 'Pedro',
+      name: 'Plant 1',
       price: 350,
       country: 'Brasil',
     ),
-
     '2': Plant(
       id: '2',
       categoryId: Category(id: '1'),
       imageAsset: 'assets/images/image_2.png',
-      name: 'Maria',
+      name: 'Plant 2',
       price: 250,
       country: 'Canada',
     ),
     '3': Plant(
       id: '3',
-      categoryId: Category(id: '1'),
+      categoryId: Category(id: '2'),
       imageAsset: 'assets/images/image_3.png',
-      name: 'Luan',
+      name: 'Plant 3',
       price: 150,
       country: 'Guatemala',
     ),
     '4': Plant(
       id: '4',
-      categoryId: Category(id: '1'),
+      categoryId: Category(id: '2'),
       imageAsset: 'assets/images/image_3.png',
-      name: 'Jeovaldo',
+      name: 'Plant 4',
       price: 450,
       country: 'Japao',
     ),
     '5': Plant(
       id: '5',
-      categoryId: Category(id: '1'),
+      categoryId: Category(id: '3'),
       imageAsset: 'assets/images/image_3.png',
-      name: 'Karla',
+      name: 'Plant 5',
       price: 650,
       country: 'Chile',
     ),
@@ -82,7 +81,9 @@ class PlantListProvider extends ChangeNotifier {
 
   List<Plant> searchPlants(String plantName) {
     return plants.values
-        .where((plant) => plant.name.toLowerCase().startsWith(plantName))
+        .where(
+          (plant) => plant.name.toLowerCase().startsWith(plantName),
+        )
         .toList();
   }
 }
