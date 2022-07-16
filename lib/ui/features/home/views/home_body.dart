@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:training_app_clean/ui/features/home/views/header_with_search_box.dart';
 import 'package:training_app_clean/ui/features/home/views/home_featured_plants.dart';
 import 'package:training_app_clean/ui/features/home/views/home_recommended_plants.dart';
-import 'package:training_app_clean/ui/features/home/views/title_with_more_button.dart';
-import 'package:training_app_clean/ui/features/widgets/constants.dart';
+import 'package:training_app_clean/ui/features/home/views/home_sub_title_with_more_button.dart';
+
 class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);
 
@@ -16,16 +16,9 @@ class HomeBody extends StatelessWidget {
         children: [
           HomeHeaderWithSearchBox(size: size),
           HomeSubtitleWithMoreButton(title: 'Recommended', press: () {}),
-          const SizedBox(
-            height: 300,
-            child: HomeRecommendedPlants(),
-          ),
+          const SizedBox(height: 300, child: HomeRecommendedPlants()),
           HomeSubtitleWithMoreButton(title: 'Featured Plants', press: () {}),
-          const SizedBox(
-            height: 300,
-            child: HomeFeaturedPlants(),
-          ),
-          const SizedBox(height: defaultPadding),
+          const SizedBox(height: 300, child: HomeFeaturedPlants()),
         ],
       ),
     );

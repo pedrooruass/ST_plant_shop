@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:training_app_clean/application/providers/favorite_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/plant_list_provider.dart';
 import 'package:training_app_clean/domain/entities/plant.dart';
+import 'package:training_app_clean/ui/features/details/details_page.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 
 class FavoriteCard extends StatelessWidget {
@@ -29,18 +30,32 @@ class FavoriteCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: primaryColor.withOpacity(0.23),
-                      offset: const Offset(-5, 5),
-                      blurRadius: 5,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PlantDetailsPage(
+                        plant: plant,
+                      ),
                     ),
-                  ],
+                  );
+                },
+                child: Container(
+                  width: plant.imageAsset == 'assets/images/bottom_img_1.png'
+                      ? 170
+                      : null,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: primaryColor.withOpacity(0.23),
+                        offset: const Offset(-5, 5),
+                        blurRadius: 5,
+                      ),
+                    ],
+                  ),
+                  child: Image.asset(plant.imageAsset),
                 ),
-                child:
-                    Image.asset(plant.imageAsset),
               ),
               const SizedBox(
                 width: defaultPadding * 2,
@@ -95,7 +110,8 @@ class FavoriteCard extends StatelessWidget {
                       ),
                       IconButton(
                         onPressed: () {
-                          favoritePlantListProvider.togglePlantFavorite(plantId);
+                          favoritePlantListProvider
+                              .togglePlantFavorite(plantId);
                         },
                         icon: const Icon(
                           FontAwesomeIcons.trashCan,

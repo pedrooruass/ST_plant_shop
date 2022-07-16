@@ -16,34 +16,34 @@ class HomeRecommendedPlants extends StatelessWidget {
     return Consumer<RecommendedPlantListProvider>(
       builder: (context, recommendedPlantListProvider, child) {
         return Consumer<PlantListProvider>(
-            builder: (context, plantListProvider, child) {
-          return Consumer<FavoritePlantListProvider>(
+          builder: (context, plantListProvider, child) {
+            return Consumer<FavoritePlantListProvider>(
               builder: (context, favoritePlantListProvider, child) {
-            return ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: recommendedPlantListProvider.plantIds.length,
-              itemBuilder: (context, index) {
-                String plantId = recommendedPlantListProvider.plantIds[index];
-                Plant plant = plantListProvider.plants[plantId]!;
-                return PlantCard(
-                  plant: plant,
-                  isPlantFavorite:
-                      favoritePlantListProvider.isPlantFavorite(plantId),
-                  onClickFavorite: () {
-                    favoritePlantListProvider.togglePlantFavorite(plantId);
+                return ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: recommendedPlantListProvider.plantIds.length,
+                  itemBuilder: (context, index) {
+                    String plantId =
+                        recommendedPlantListProvider.plantIds[index];
+                    Plant plant = plantListProvider.plants[plantId]!;
+                    return SizedBox(
+                      height: 150,
+                      child: PlantCard(
+                        plant: plant,
+                        isPlantFavorite:
+                            favoritePlantListProvider.isPlantFavorite(plantId),
+                        onClickFavorite: () {
+                          favoritePlantListProvider.togglePlantFavorite(plantId);
+                        },
+                      ),
+                    );
                   },
                 );
               },
             );
-          });
-        });
+          },
+        );
       },
     );
-    // return ListView.builder(
-    //   scrollDirection: Axis.horizontal,
-    //   itemBuilder: (context, index) {
-    //     return plants[index];
-    //   },
-    // );
   }
 }

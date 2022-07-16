@@ -4,8 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 
-class UniversalAppBar extends StatelessWidget implements PreferredSizeWidget {
-  UniversalAppBar({
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  CustomAppBar({
     Key? key,
     this.title,
     required this.backgroundColor,

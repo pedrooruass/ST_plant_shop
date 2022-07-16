@@ -4,7 +4,7 @@ import 'package:training_app_clean/application/providers/favorite_plant_list_pro
 import 'package:training_app_clean/application/providers/featured_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/plant_list_provider.dart';
 import 'package:training_app_clean/domain/entities/plant.dart';
-import 'package:training_app_clean/ui/features/widgets/plant_card.dart';
+import 'package:training_app_clean/ui/features/home/views/home_featured_plant_card.dart';
 
 class HomeFeaturedPlants extends StatelessWidget {
   const HomeFeaturedPlants({
@@ -25,13 +25,12 @@ class HomeFeaturedPlants extends StatelessWidget {
                   itemBuilder: (context, index) {
                     String plantId = featuredPlantListProvider.plantIds[index];
                     Plant plant = plantListProvider.plants[plantId]!;
-                    return PlantCard(
+                    return HomeFeaturedPlantCard(
                       plant: plant,
-                      isPlantFavorite:
-                          favoritePlantListProvider.isPlantFavorite(plantId),
                       onClickFavorite: () {
                         favoritePlantListProvider.togglePlantFavorite(plantId);
                       },
+                      isPlantFavorite: favoritePlantListProvider.isPlantFavorite(plantId),
                     );
                   },
                 );

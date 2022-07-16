@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:training_app_clean/application/providers/favorite_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/plant_list_provider.dart';
@@ -34,27 +33,24 @@ class CategoryPage extends StatelessWidget {
             itemBuilder: (context, index) {
               Plant plant = plantListProvider.categoryPlant(category)[index];
               return Container(
-                padding: const EdgeInsets.only(bottom: defaultPadding),
-                height: 180,
-                color: Colors.blue,
+                padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+                margin: const EdgeInsets.symmetric(
+                    horizontal: defaultPadding, vertical: defaultPadding / 2),
+                height: 150,
+                width: 180,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: primaryColor.withOpacity(0.23),
-                            offset: const Offset(-5, 5),
-                            blurRadius: 5,
-                          ),
-                        ],
-                      ),
+                    SizedBox(
+                      width: 180,
+                      height: 150,
                       child: Image.asset(plant.imageAsset),
                     ),
-                    const SizedBox(
-                      width: defaultPadding * 2,
-                    ),
+                    const Spacer(),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -63,6 +59,7 @@ class CategoryPage extends StatelessWidget {
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 22,
+                            color: Colors.brown
                           ),
                         ),
                         Text(
@@ -70,6 +67,7 @@ class CategoryPage extends StatelessWidget {
                           style: const TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 18,
+                            color: Colors.brown
                           ),
                         ),
                         Text(
@@ -77,10 +75,12 @@ class CategoryPage extends StatelessWidget {
                           style: const TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 18,
+                            color: Colors.brown
                           ),
                         ),
                       ],
                     ),
+                    const Spacer(),
                   ],
                 ),
               );

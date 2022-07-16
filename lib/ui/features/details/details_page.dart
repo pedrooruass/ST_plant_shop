@@ -14,22 +14,20 @@ class PlantDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              DetailsImageAndIcons(
-                image: plant.imageAsset,
-              ),
-              DetailsTitleAndPrice(
-                name: plant.name,
-                country: plant.country,
-                price: plant.price,
-              ),
-              
-              const DetailsBuyNowBottomLine(),
-              // const SizedBox(height: defaultPadding * 2),
-            ],
-          ),
+        child: Column(
+          children: [
+            DetailsImageAndIcons(
+              image: plant.imageAsset,
+            ),
+            DetailsTitleAndPrice(
+              name: plant.name,
+              country: plant.country,
+              price: plant.price,
+            ),
+            const Spacer(),
+            const DetailsBuyNowBottomLine(),
+            // const SizedBox(height: defaultPadding * 2),
+          ],
         ),
       ),
     );

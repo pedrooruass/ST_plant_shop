@@ -3,7 +3,7 @@ import 'package:training_app_clean/domain/entities/category.dart';
 import 'package:training_app_clean/ui/features/category/views/category_app_bar_card.dart';
 import 'package:training_app_clean/ui/features/category/views/page_route_app_bar.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
-import 'package:training_app_clean/ui/features/widgets/universal_app_bar.dart';
+import 'package:training_app_clean/ui/features/widgets/custom_app_bar.dart';
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     final pageController = PageController(initialPage: 0);
     return Scaffold(
       backgroundColor: primaryColor,
-      appBar: UniversalAppBar(
+      appBar: CustomAppBar(
         backgroundColor: primaryColor,
         haveLeading: false,
         isTextString: false,
@@ -34,7 +34,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               ),
               cardColor: currentIndex == 0
                   ? primaryColor
-                  : Colors.grey, // ternaria com currentIndex
+                  : Colors.brown.shade400,
               onCategoryTap: () {
                 setState(() {
                   currentIndex = 0;
@@ -47,7 +47,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 name: 'Trees',
                 id: '2',
               ),
-              cardColor: currentIndex == 1 ? primaryColor : Colors.grey,
+              cardColor: currentIndex == 1 ? primaryColor : Colors.brown.shade400,
               onCategoryTap: () {
                 setState(() {
                   currentIndex = 1;
@@ -60,7 +60,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 name: 'Creepers',
                 id: '3',
               ),
-              cardColor: currentIndex == 2 ? primaryColor : Colors.grey,
+              cardColor: currentIndex == 2 ? primaryColor : Colors.brown.shade400,
               onCategoryTap: () {
                 setState(() {
                   currentIndex = 2;

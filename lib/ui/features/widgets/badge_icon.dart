@@ -17,7 +17,7 @@ class BadgeIcon extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      child: Icon(icon),
+      child: Icon(icon),  
     );
   }
 }

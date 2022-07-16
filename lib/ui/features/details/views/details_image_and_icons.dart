@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+import 'package:training_app_clean/application/providers/favorite_plant_list_provider.dart';
+import 'package:training_app_clean/application/providers/plant_list_provider.dart';
 import 'package:training_app_clean/ui/features/details/views/details_icon_card.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
+import 'package:training_app_clean/ui/features/widgets/favorite_plant_heart.dart';
 
 class DetailsImageAndIcons extends StatelessWidget {
   const DetailsImageAndIcons({
@@ -18,8 +22,7 @@ class DetailsImageAndIcons extends StatelessWidget {
         children: [
           Expanded(
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: defaultPadding * 2),
+              padding: const EdgeInsets.symmetric(vertical: defaultPadding * 2),
               child: Column(
                 children: [
                   Align(
@@ -45,6 +48,10 @@ class DetailsImageAndIcons extends StatelessWidget {
           Container(
             height: size.height * 0.7,
             width: size.width * 0.7,
+            alignment: Alignment.topRight,
+            padding: const EdgeInsets.only(
+              top: defaultPadding,
+            ),
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(63),
@@ -63,6 +70,14 @@ class DetailsImageAndIcons extends StatelessWidget {
                 fit: BoxFit.fitHeight,
               ),
             ),
+            // child: FavoritePlantHeart(
+            //   isPlantFavorite: false,
+            //       // favoritePlantListProvider.isPlantFavorite(plantId),
+            //   onClickFavorite: () {
+            //     // favoritePlantListProvider.togglePlantFavorite(plantId);
+
+            //   },
+            // ),
           ),
         ],
       ),

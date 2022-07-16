@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UniversalDrawer extends StatelessWidget {
-  const UniversalDrawer({
+class HomeDrawer extends StatelessWidget {
+  const HomeDrawer({
     Key? key,
     required this.drawerBackgroundColor,
   }) : super(key: key);

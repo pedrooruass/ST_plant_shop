@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:training_app_clean/domain/entities/plant.dart';
 import 'package:training_app_clean/ui/features/details/details_page.dart';
 import 'package:training_app_clean/ui/features/widgets/constants.dart';
 import 'package:training_app_clean/ui/features/widgets/favorite_plant_heart.dart';
 
-class PlantCard extends StatelessWidget {
-  const PlantCard({
+class HomeFeaturedPlantCard extends StatelessWidget {
+  const HomeFeaturedPlantCard({
     Key? key,
     required this.plant,
     required this.onClickFavorite,
@@ -14,23 +15,24 @@ class PlantCard extends StatelessWidget {
 
   final Plant plant;
   final bool isPlantFavorite;
-  // final bool isPlantHorizontal;
   final void Function() onClickFavorite;
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.all(defaultPadding - 5),
+      padding: const EdgeInsets.all(defaultPadding / 2),
       child: SizedBox(
-        width: size.width * 0.4,  
-        height: size.height * 0.2, 
+        width: size.width * 0.7,
+        height: 300,
         child: Column(
           children: [
             Stack(
               alignment: Alignment.topRight,
               children: [
-                Image.asset(plant.imageAsset),
+                Image.asset(
+                  plant.imageAsset,
+                  fit: BoxFit.fitWidth,
+                ),
                 FavoritePlantHeart(
                   onClickFavorite: onClickFavorite,
                   isPlantFavorite: isPlantFavorite,

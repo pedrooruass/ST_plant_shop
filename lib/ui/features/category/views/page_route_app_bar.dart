@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/entities/category.dart';
-import 'package:training_app_clean/ui/features/categories/sub_pages/category_page.dart';
+import 'package:training_app_clean/ui/features/category/screens/category_page.dart';
 
 class PageRouteAppBar extends StatelessWidget {
   PageRouteAppBar({
@@ -13,6 +13,7 @@ class PageRouteAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView(
       controller: pageController,
+      physics: const NeverScrollableScrollPhysics(),
       children: [
         CategoryPage(
           category: Category(

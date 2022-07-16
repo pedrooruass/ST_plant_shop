@@ -15,7 +15,7 @@ class PlantListProvider extends ChangeNotifier {
     '2': Plant(
       id: '2',
       categoryId: Category(id: '1'),
-      imageAsset: 'assets/images/image_2.png',
+      imageAsset: 'assets/images/bottom_img_1.png',
       name: 'Plant 2',
       price: 250,
       country: 'Canada',
@@ -23,7 +23,7 @@ class PlantListProvider extends ChangeNotifier {
     '3': Plant(
       id: '3',
       categoryId: Category(id: '2'),
-      imageAsset: 'assets/images/image_3.png',
+      imageAsset: 'assets/images/image_2.png',
       name: 'Plant 3',
       price: 150,
       country: 'Guatemala',
@@ -31,10 +31,10 @@ class PlantListProvider extends ChangeNotifier {
     '4': Plant(
       id: '4',
       categoryId: Category(id: '2'),
-      imageAsset: 'assets/images/image_3.png',
+      imageAsset: 'assets/images/bottom_img_1.png',
       name: 'Plant 4',
       price: 450,
-      country: 'Japao',
+      country: 'Japan',
     ),
     '5': Plant(
       id: '5',
@@ -44,20 +44,22 @@ class PlantListProvider extends ChangeNotifier {
       price: 650,
       country: 'Chile',
     ),
-    // Plant(
-    //   id: '',
-    //   imageAsset: 'assets/images/image_3.png',
-    //   name: 'Seungmooo',
-    //   price: 50,
-    //   country: 'Korea',
-    // ),
-    // Plant(
-    //   id: '',
-    //   imageAsset: 'assets/images/image_3.png',
-    //   name: 'Giulia',
-    //   price: 750,
-    //   country: 'Paraguai',
-    // ),
+    '6': Plant(
+      id: '6',
+      categoryId: Category(id: '3'),
+      imageAsset: 'assets/images/bottom_img_1.png',
+      name: 'Plant 6',
+      price: 50,
+      country: 'Korea',
+    ),
+    '7': Plant(
+      id: '7',
+      categoryId: Category(id: '1'),
+      imageAsset: 'assets/images/bottom_img_2.png',
+      name: 'Plant 7',
+      price: 750,
+      country: 'Paraguay',
+    ),
   };
 
   List<Plant> categoryPlant(Category categoryId) {
