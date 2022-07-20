@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/entities/category.dart';
-import 'package:training_app_clean/ui/features/category/screens/category_page.dart';
+import 'package:training_app_clean/ui/features/category/screens/categories_body.dart';
 
 class PageRouteAppBar extends StatelessWidget {
   PageRouteAppBar({
@@ -15,19 +15,19 @@ class PageRouteAppBar extends StatelessWidget {
       controller: pageController,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-        CategoryPage(
+        CategoriesBody(
           category: Category(
             id: '1',
             name: 'Herbs',
           ),
         ),
-        CategoryPage(
+        CategoriesBody(
           category: Category(
             id: '2',
             name: 'Trees',
           ),
         ),
-        CategoryPage(
+        CategoriesBody(
           category: Category(
             id: '3',
             name: 'Creepers',

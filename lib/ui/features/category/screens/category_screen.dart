@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/entities/category.dart';
 import 'package:training_app_clean/ui/features/category/views/category_app_bar_card.dart';
 import 'package:training_app_clean/ui/features/category/views/page_route_app_bar.dart';
-import 'package:training_app_clean/ui/features/widgets/constants.dart';
+import 'package:training_app_clean/domain/resources/constants.dart';
 import 'package:training_app_clean/ui/features/widgets/custom_app_bar.dart';
 
 class CategoryScreen extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/ui/features/home/views/home_body.dart';
-import 'package:training_app_clean/ui/features/widgets/constants.dart';
+import 'package:training_app_clean/domain/resources/constants.dart';
 import 'package:training_app_clean/ui/features/widgets/custom_app_bar.dart';
 import 'package:training_app_clean/ui/features/home/views/home_drawer.dart';
 

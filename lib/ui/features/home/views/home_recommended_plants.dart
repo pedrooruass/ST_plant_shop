@@ -3,8 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:training_app_clean/application/providers/favorite_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/recommended_plant_list_provider.dart';
-import 'package:training_app_clean/domain/entities/plant.dart';
-import 'package:training_app_clean/ui/features/widgets/plant_card.dart';
+import 'package:training_app_clean/ui/features/widgets/horizontal_plant_list.dart';
 
 class HomeRecommendedPlants extends StatelessWidget {
   const HomeRecommendedPlants({
@@ -13,37 +12,20 @@ class HomeRecommendedPlants extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<RecommendedPlantListProvider>(
-      builder: (context, recommendedPlantListProvider, child) {
-        return Consumer<PlantListProvider>(
-          builder: (context, plantListProvider, child) {
-            return Consumer<FavoritePlantListProvider>(
-              builder: (context, favoritePlantListProvider, child) {
-                return ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: recommendedPlantListProvider.plantIds.length,
-                  itemBuilder: (context, index) {
-                    String plantId =
-                        recommendedPlantListProvider.plantIds[index];
-                    Plant plant = plantListProvider.plants[plantId]!;
-                    return SizedBox(
-                      height: 150,
-                      child: PlantCard(
-                        plant: plant,
-                        isPlantFavorite:
-                            favoritePlantListProvider.isPlantFavorite(plantId),
-                        onClickFavorite: () {
-                          favoritePlantListProvider.togglePlantFavorite(plantId);
-                        },
-                      ),
-                    );
-                  },
-                );
-              },
-            );
-          },
+    return Consumer3<RecommendedPlantListProvider, PlantListProvider,
+        FavoritePlantListProvider>(
+      builder: (context, recommendedPlantListProvider, plantListProvider,
+          favoritePlantListProvider, child) {
+        return SizedBox(
+          height: 280,
+          child: HorizontalPlantCardList(
+            plantListIds: recommendedPlantListProvider.plantIds,
+            plantListProvider: plantListProvider,
+            favoritePlantListProvider: favoritePlantListProvider,
+          ),
         );
       },
     );
   }
 }
+

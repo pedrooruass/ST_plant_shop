@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_app_clean/ui/features/widgets/constants.dart';
+import 'package:training_app_clean/domain/resources/constants.dart';
 class ProfileCircularPhoto extends StatelessWidget {
   const ProfileCircularPhoto({
     Key? key,

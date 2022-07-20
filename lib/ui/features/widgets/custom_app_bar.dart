@@ -2,7 +2,10 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:training_app_clean/ui/features/widgets/constants.dart';
+import 'package:training_app_clean/domain/resources/constants.dart';
+
+
+// criar as 4 appbars sozinhas, e dps olhar oq tem em comum u colocar em um arquivo pai fazendo a heranca pra cada uma delas
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   CustomAppBar({

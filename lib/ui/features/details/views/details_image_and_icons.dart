@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:training_app_clean/application/providers/favorite_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/plant_list_provider.dart';
 import 'package:training_app_clean/ui/features/details/views/details_icon_card.dart';
-import 'package:training_app_clean/ui/features/widgets/constants.dart';
+import 'package:training_app_clean/domain/resources/constants.dart';
 import 'package:training_app_clean/ui/features/widgets/favorite_plant_heart.dart';
 
 class DetailsImageAndIcons extends StatelessWidget {

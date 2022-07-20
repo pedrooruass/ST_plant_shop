@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/ui/features/home/views/home_more_plants.dart';
 import 'package:training_app_clean/ui/features/home/views/home_subtitle.dart';
-import 'package:training_app_clean/ui/features/widgets/constants.dart';
+import 'package:training_app_clean/domain/resources/constants.dart';
 
 class HomeSubtitleWithMoreButton extends StatelessWidget {
   const HomeSubtitleWithMoreButton({

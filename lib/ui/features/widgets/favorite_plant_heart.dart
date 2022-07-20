@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_app_clean/ui/features/widgets/constants.dart';
+import 'package:training_app_clean/domain/resources/constants.dart';
 
 class FavoritePlantHeart extends StatelessWidget {
   const FavoritePlantHeart({
@@ -16,7 +16,7 @@ class FavoritePlantHeart extends StatelessWidget {
     return IconButton(
       onPressed: onClickFavorite,
       icon: Icon(
-        isPlantFavorite ? Icons.favorite : Icons.favorite_border,
+        favoriteIcon(isFavorite: isPlantFavorite),
         color: secondaryColor,
         size: 25,
       ),

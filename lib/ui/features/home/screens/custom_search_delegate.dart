@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/entities/plant.dart';
 import 'package:training_app_clean/ui/features/details/details_page.dart';
-import 'package:training_app_clean/ui/features/widgets/constants.dart';
+import 'package:training_app_clean/domain/resources/constants.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
   CustomSearchDelegate({
@@ -10,12 +10,10 @@ class CustomSearchDelegate extends SearchDelegate {
 // Demo list to show querying
   List<Plant> plantList;
 
-
-
-@override
-TextStyle? get searchFieldStyle => const TextStyle(
-  color: primaryColor,
-);
+  @override
+  TextStyle? get searchFieldStyle => const TextStyle(
+        color: primaryColor,
+      );
 
 // first overwrite to
 // clear the search text
@@ -26,7 +24,7 @@ TextStyle? get searchFieldStyle => const TextStyle(
         onPressed: () {
           query = '';
         },
-        icon: Icon(
+        icon: const Icon(
           Icons.clear,
           color: Colors.red,
         ),
@@ -41,7 +39,7 @@ TextStyle? get searchFieldStyle => const TextStyle(
       onPressed: () {
         close(context, null);
       },
-      icon: Icon(
+      icon: const Icon(
         Icons.arrow_back,
         color: primaryColor,
       ),
@@ -56,22 +54,7 @@ TextStyle? get searchFieldStyle => const TextStyle(
           (plant) => plant.name.toLowerCase().startsWith(query.toLowerCase()),
         )
         .toList();
-    return ListView.builder(
-      itemCount: matchQuery.length,
-      itemBuilder: (context, index) {
-        Plant plant = matchQuery[index];
-        return ListTile(
-          leading: CircleAvatar(
-            backgroundImage: AssetImage(plant.imageAsset),
-          ),
-          title: Text(plant.name),
-          subtitle: Text(plant.country),
-          trailing: Text(
-            plant.price.toString(),
-          ),
-        );
-      },
-    );
+    return SearchListTile(matchQuery: matchQuery);
   }
 
 // last overwrite to show the
@@ -83,6 +66,20 @@ TextStyle? get searchFieldStyle => const TextStyle(
           (plant) => plant.name.toLowerCase().startsWith(query.toLowerCase()),
         )
         .toList();
+    return SearchListTile(matchQuery: matchQuery);
+  }
+}
+
+class SearchListTile extends StatelessWidget {
+  const SearchListTile({
+    Key? key,
+    required this.matchQuery,
+  }) : super(key: key);
+
+  final List<Plant> matchQuery;
+
+  @override
+  Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: matchQuery.length,
       itemBuilder: (context, index) {

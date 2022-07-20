@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/ui/features/main/main_screen.dart';
-import 'package:training_app_clean/ui/features/widgets/constants.dart';
+import 'package:training_app_clean/domain/resources/constants.dart';
 
 void main(List<String> args) => runApp(const MyApp());
 
