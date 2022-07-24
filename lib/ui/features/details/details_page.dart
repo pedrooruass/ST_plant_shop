@@ -17,7 +17,7 @@ class PlantDetailsPage extends StatelessWidget {
         child: Column(
           children: [
             DetailsImageAndIcons(
-              image: plant.imageAsset,
+              plant: plant,
             ),
             DetailsTitleAndPrice(
               name: plant.name,
@@ -25,7 +25,9 @@ class PlantDetailsPage extends StatelessWidget {
               price: plant.price,
             ),
             const Spacer(),
-            const DetailsBuyNowBottomLine(),
+             DetailsBuyNowBottomLine(
+              plant: plant,
+            ),
             // const SizedBox(height: defaultPadding * 2),
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:training_app_clean/application/providers/basket_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/favorite_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/recommended_plant_list_provider.dart';
@@ -12,20 +13,20 @@ class HomeRecommendedPlants extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer3<RecommendedPlantListProvider, PlantListProvider,
-        FavoritePlantListProvider>(
+    return Consumer4<RecommendedPlantListProvider, PlantListProvider,
+        FavoritePlantListProvider, CartPlantListProvider>(
       builder: (context, recommendedPlantListProvider, plantListProvider,
-          favoritePlantListProvider, child) {
+          favoritePlantListProvider, basketPlantListProvider, child) {
         return SizedBox(
-          height: 280,
+          height: 270,
           child: HorizontalPlantCardList(
             plantListIds: recommendedPlantListProvider.plantIds,
             plantListProvider: plantListProvider,
             favoritePlantListProvider: favoritePlantListProvider,
+            basketPlantListProvider: basketPlantListProvider,
           ),
         );
       },
     );
   }
 }
-

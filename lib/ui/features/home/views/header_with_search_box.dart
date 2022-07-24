@@ -5,6 +5,7 @@ import 'package:training_app_clean/application/providers/plant_list_provider.dar
 import 'package:training_app_clean/domain/entities/plant.dart';
 import 'package:training_app_clean/ui/features/home/screens/custom_search_delegate.dart';
 import 'package:training_app_clean/domain/resources/constants.dart';
+import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class HomeHeaderWithSearchBox extends StatelessWidget {
   const HomeHeaderWithSearchBox({
@@ -20,7 +21,7 @@ class HomeHeaderWithSearchBox extends StatelessWidget {
       builder: (context, plantListProvider, child) {
         return Container(
           margin: const EdgeInsets.only(
-            bottom: defaultPadding * 2.5,
+            bottom: defaultPadding * 2,
           ),
           height: size.height * 0.2,
           child: Stack(
@@ -63,7 +64,7 @@ class HomeHeader extends StatelessWidget {
       ),
       height: size.height * 0.2 - 27,
       decoration: const BoxDecoration(
-        color: primaryColor,
+        color: AppColors.primaryColor,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(33),
           bottomRight: Radius.circular(33),
@@ -72,7 +73,7 @@ class HomeHeader extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            'Hi $storeTitle!',
+            'Hi, $storeTitle!',
             style: Theme.of(context)
                 .textTheme
                 .headline5
@@ -112,7 +113,7 @@ class HomeSearchBar extends StatelessWidget {
             BoxShadow(
               offset: const Offset(0, 10),
               blurRadius: 50,
-              color: primaryColor.withOpacity(0.23),
+              color: AppColors.primaryColor.withOpacity(0.23),
             ),
           ],
         ),
@@ -125,7 +126,7 @@ class HomeSearchBar extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: 'Search',
                   hintStyle: TextStyle(
-                    color: primaryColor.withOpacity(0.5),
+                    color: AppColors.primaryColor.withOpacity(0.5),
                   ),
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,

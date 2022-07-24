@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/entities/plant.dart';
-import 'package:training_app_clean/domain/resources/constants.dart';
+import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class PlantImage extends StatelessWidget {
   const PlantImage({
@@ -19,7 +19,7 @@ class PlantImage extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: primaryColor.withOpacity(0.23),
+            color: AppColors.primaryColor.withOpacity(0.23),
             offset: const Offset(-5, 5),
             blurRadius: 5,
           ),

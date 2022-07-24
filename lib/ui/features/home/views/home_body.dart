@@ -15,9 +15,9 @@ class HomeBody extends StatelessWidget {
       child: Column(
         children: [
           HomeHeaderWithSearchBox(size: size),
-          HomeSubtitleWithMoreButton(title: 'Recommended', press: () {}),
+          HomeSubtitleWithMoreButton(title: 'Recommended'),
           const HomeRecommendedPlants(),
-          HomeSubtitleWithMoreButton(title: 'Featured Plants', press: () {}),
+          HomeSubtitleWithMoreButton(title: 'Featured Plants'),
           const HomeFeaturedPlants(),
         ],
       ),

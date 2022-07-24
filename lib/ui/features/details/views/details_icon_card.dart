@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:training_app_clean/domain/resources/constants.dart';
+import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class DetailsIconCard extends StatelessWidget {
   const DetailsIconCard({
@@ -21,18 +22,18 @@ class DetailsIconCard extends StatelessWidget {
       height: 62,
       width: 63,
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(6),
         boxShadow: [
           BoxShadow(
             offset: const Offset(0,15),
             blurRadius: 22,
-            color: primaryColor.withOpacity(0.22),
+            color: AppColors.primaryColor.withOpacity(0.22),
           ),
           const BoxShadow(
             offset: Offset(-15,-15),
             blurRadius: 20,
-            color: Colors.white
+            color: AppColors.white
           ),
         ],
       ),

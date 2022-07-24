@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:training_app_clean/ui/features/widgets/badge_icon.dart';
-import 'package:training_app_clean/domain/resources/constants.dart';
+import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar(
@@ -27,12 +27,12 @@ class BottomNavBar extends StatelessWidget {
             icon: Icon(Icons.home_outlined),
             activeIcon: Icon(FontAwesomeIcons.leaf),
             label: 'Home',
-            backgroundColor: primaryColor),
+            backgroundColor: AppColors.primaryColor),
         const BottomNavigationBarItem(
           icon: Icon(Icons.category_outlined),
           activeIcon: Icon(FontAwesomeIcons.shapes),
           label: 'Category',
-          backgroundColor: primaryColor,
+          backgroundColor: AppColors.primaryColor,
         ),
         BottomNavigationBarItem(
           icon: BadgeIcon(
@@ -40,13 +40,13 @@ class BottomNavBar extends StatelessWidget {
           activeIcon: BadgeIcon(
               icon: FontAwesomeIcons.solidHeart, badgeContent: badgeContent),
           label: 'Favorites',
-          backgroundColor: primaryColor,
+          backgroundColor: AppColors.primaryColor,
         ),
         const BottomNavigationBarItem(
           icon: Icon(FontAwesomeIcons.user),
           activeIcon: Icon(FontAwesomeIcons.userTie),
           label: 'Profile',
-          backgroundColor: primaryColor,
+          backgroundColor: AppColors.primaryColor,
         ),
       ],
     );

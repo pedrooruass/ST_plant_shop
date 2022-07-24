@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/resources/constants.dart';
+import 'package:training_app_clean/ui/theme/app_colors.dart';
 class HomeTitleWithCustomUnderline extends StatelessWidget {
  
   final String text;
@@ -32,7 +33,7 @@ class HomeTitleWithCustomUnderline extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.only(right: defaultPadding / 4),
               height: 7,
-              color: primaryColor.withOpacity(0.2),
+              color: AppColors.primaryColor.withOpacity(0.2),
             ),
           ),
         ],

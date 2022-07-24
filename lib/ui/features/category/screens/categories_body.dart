@@ -40,31 +40,3 @@ class CategoriesBody extends StatelessWidget {
     );
   }
 }
-
-
-/// Use this layout for the more pages, where it shows all the plants
-
-// GridView.builder(
-//             // padding: const EdgeInsets.all(defaultPadding / 5 + 4),
-//             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-//               crossAxisCount: 2,
-//               childAspectRatio: 0.65,
-//             ),
-//             itemCount: plantListProvider
-//                 .categoryPlant(
-//                   category, // try to do like this, to make it grabbing the same value from the plant: plantListProvider.plants[index].categoryId
-//                 )
-//                 .length,
-//             itemBuilder: (context, index) {
-//               // Plant plant = plantListProvider.plants[]!;
-//               Plant plant = plantListProvider.categoryPlant(category)[index];
-//               return PlantCard(
-//                 plant: plant,
-//                 isPlantFavorite:
-//                     favoritePlantListProvider.isPlantFavorite(plant.id),
-//                 onClickFavorite: () {
-//                   favoritePlantListProvider.togglePlantFavorite(plant.id);
-//                 },
-//               );
-//             },
-//           );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/resources/constants.dart';
+import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class ProfileTileSubScreens extends StatelessWidget {
   ProfileTileSubScreens({
@@ -18,12 +19,12 @@ class ProfileTileSubScreens extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          leading: Icon(icon, color: isSignOut ? Colors.red : primaryColor),
+          leading: Icon(icon, color: isSignOut ? Colors.red : AppColors.primaryColor),
           trailing: isSignOut
               ? null
               : const Icon(
                   Icons.arrow_forward_ios,
-                  color: primaryColor,
+                  color: AppColors.primaryColor,
                 ),
           title: Text(
             title,

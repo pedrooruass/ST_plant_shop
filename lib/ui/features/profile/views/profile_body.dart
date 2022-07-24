@@ -12,7 +12,7 @@ class ProfileBody extends StatelessWidget {
       children: const [
         ProfileCircularPhoto(image: 'assets/images/plant_logo.png'),
         ProfileUserName(profileName: 'Pedro Ruas'),
-        Spacer(),
+        Spacer(), 
         ProfileWhiteBackground(),
       ],
     );

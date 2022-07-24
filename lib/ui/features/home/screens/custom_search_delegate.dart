@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/entities/plant.dart';
 import 'package:training_app_clean/ui/features/details/details_page.dart';
-import 'package:training_app_clean/domain/resources/constants.dart';
+import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
   CustomSearchDelegate({
@@ -12,7 +12,7 @@ class CustomSearchDelegate extends SearchDelegate {
 
   @override
   TextStyle? get searchFieldStyle => const TextStyle(
-        color: primaryColor,
+        color: AppColors.primaryColor,
       );
 
 // first overwrite to
@@ -41,7 +41,7 @@ class CustomSearchDelegate extends SearchDelegate {
       },
       icon: const Icon(
         Icons.arrow_back,
-        color: primaryColor,
+        color: AppColors.primaryColor,
       ),
     );
   }

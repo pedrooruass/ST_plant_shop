@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/resources/constants.dart';
+import 'package:training_app_clean/ui/theme/app_colors.dart';
 class ProfileCircularPhoto extends StatelessWidget {
   const ProfileCircularPhoto({
     Key? key,
@@ -22,14 +23,14 @@ class ProfileCircularPhoto extends StatelessWidget {
           Container(
             height: 40,
             width: 40,
-            decoration: const BoxDecoration(
+            decoration:  BoxDecoration(
               color: Colors.black54,
               borderRadius: BorderRadius.all(
                 Radius.circular(30),
               ),
               boxShadow: [
                 BoxShadow(
-                  color: primaryColor,
+                  color: AppColors.primaryColor,
                   spreadRadius: 4,
                 )
               ],

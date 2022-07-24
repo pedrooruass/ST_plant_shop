@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_app_clean/application/providers/basket_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/favorite_plant_list_provider.dart';
 import 'package:training_app_clean/application/providers/plant_list_provider.dart';
 import 'package:training_app_clean/domain/entities/plant.dart';
@@ -9,12 +10,13 @@ class HorizontalPlantCardList extends StatelessWidget {
     Key? key,
     required this.plantListIds,
     required this.plantListProvider,
-    required this.favoritePlantListProvider,
+    required this.favoritePlantListProvider, required this.basketPlantListProvider,
   }) : super(key: key);
 
   final List<String> plantListIds;
   final PlantListProvider plantListProvider;
   final FavoritePlantListProvider favoritePlantListProvider;
+  final CartPlantListProvider basketPlantListProvider;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,10 @@ class HorizontalPlantCardList extends StatelessWidget {
           isPlantFavorite: favoritePlantListProvider.isPlantFavorite(plantId),
           onClickFavorite: () {
             favoritePlantListProvider.togglePlantFavorite(plantId);
+          },
+          isOnCart: basketPlantListProvider.isPlantOnCart(plantId),
+          onClickCart: () {
+            basketPlantListProvider.togglePlantOnCart(plantId);
           },
         );
       },

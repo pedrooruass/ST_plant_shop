@@ -63,22 +63,9 @@ class PlantListProvider extends ChangeNotifier {
   };
 
   List<Plant> categoryPlant(Category categoryId) {
-    List<Plant> categoryPlantsLocated = [];
-    switch (categoryId.id) {
-      case '1':
-        categoryPlantsLocated =
-            plants.values.where((plant) => plant.categoryId.id == '1').toList();
-        break;
-      case '2':
-        categoryPlantsLocated =
-            plants.values.where((plant) => plant.categoryId.id == '2').toList();
-        break;
-      case '3':
-        categoryPlantsLocated =
-            plants.values.where((plant) => plant.categoryId.id == '3').toList();
-        break;
-    }
-    return categoryPlantsLocated;
+    return plants.values
+        .where((plant) => plant.categoryId.id == categoryId.id)
+        .toList();
   }
 
   List<Plant> searchPlants(String plantName) {

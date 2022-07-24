@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/resources/constants.dart';
+import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class DetailsTitleAndPrice extends StatelessWidget {
   const DetailsTitleAndPrice({
@@ -26,13 +27,13 @@ class DetailsTitleAndPrice extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .headline4
-                      ?.copyWith(color: textColor, fontWeight: FontWeight.bold),
+                      ?.copyWith(color: AppColors.textColor, fontWeight: FontWeight.bold),
                 ),
                 TextSpan(
                   text: country,
                   style: const TextStyle(
                     fontSize: 20,
-                    color: primaryColor,
+                    color: AppColors.primaryColor,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
@@ -43,7 +44,7 @@ class DetailsTitleAndPrice extends StatelessWidget {
           Text(
             '\$$price',
             style: Theme.of(context).textTheme.headline5?.copyWith(
-                  color: primaryColor,
+                  color: AppColors.primaryColor,
                 ),
           )
         ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_app_clean/domain/resources/constants.dart';
+import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class HomeMorePlants extends StatelessWidget {
   const HomeMorePlants({
@@ -19,7 +19,7 @@ class HomeMorePlants extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(primaryColor),
+        backgroundColor: MaterialStateProperty.all<Color>(AppColors.primaryColor),
       ),
       child: const Text(
         'More',

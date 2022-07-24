@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/entities/category.dart';
 import 'package:training_app_clean/ui/features/category/views/category_app_bar_card.dart';
 import 'package:training_app_clean/ui/features/category/views/page_route_app_bar.dart';
-import 'package:training_app_clean/domain/resources/constants.dart';
 import 'package:training_app_clean/ui/features/widgets/custom_app_bar.dart';
+import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen({Key? key}) : super(key: key);
@@ -19,10 +19,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
     final pageController = PageController(initialPage: 0);
     return Scaffold(
-      backgroundColor: primaryColor,
       appBar: CustomAppBar(
-        backgroundColor: primaryColor,
-        haveLeading: false,
+        backgroundColor: AppColors.primaryColor,
         isTextString: false,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -33,8 +31,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 id: '1',
               ),
               cardColor: currentIndex == 0
-                  ? primaryColor
-                  : Colors.brown.shade400,
+                  ? AppColors.primaryColor
+                  : AppColors.unselectedCategoryColor,
               onCategoryTap: () {
                 setState(() {
                   currentIndex = 0;
@@ -47,7 +45,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 name: 'Trees',
                 id: '2',
               ),
-              cardColor: currentIndex == 1 ? primaryColor : Colors.brown.shade400,
+              cardColor: currentIndex == 1 ? AppColors.primaryColor : AppColors.unselectedCategoryColor,
               onCategoryTap: () {
                 setState(() {
                   currentIndex = 1;
@@ -60,7 +58,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 name: 'Creepers',
                 id: '3',
               ),
-              cardColor: currentIndex == 2 ? primaryColor : Colors.brown.shade400,
+              cardColor: currentIndex == 2 ? AppColors.primaryColor :AppColors.unselectedCategoryColor,
               onCategoryTap: () {
                 setState(() {
                   currentIndex = 2;

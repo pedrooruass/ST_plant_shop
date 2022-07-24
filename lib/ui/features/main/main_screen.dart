@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:training_app_clean/application/providers/favorite_plant_list_provider.dart';
-import 'package:training_app_clean/application/providers/featured_plant_list_provider.dart';
-import 'package:training_app_clean/application/providers/plant_list_provider.dart';
-import 'package:training_app_clean/application/providers/recommended_plant_list_provider.dart';
 import 'package:training_app_clean/ui/features/category/screens/category_screen.dart';
 import 'package:training_app_clean/ui/features/favorites/favorites_screen.dart';
 import 'package:training_app_clean/ui/features/home/screens/home_screen.dart';
@@ -25,43 +22,32 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => PlantListProvider()),
-        ChangeNotifierProvider(
-            create: (context) => FavoritePlantListProvider()),
-        ChangeNotifierProvider(
-            create: (context) => RecommendedPlantListProvider()),
-        ChangeNotifierProvider(
-            create: (context) => FeaturedPlantListProvider()),
-      ],
-      child: Scaffold(
-        key: scaffoldKey,
-        body: PageView(
-          controller: pageController,
-          physics: const NeverScrollableScrollPhysics(),
-          children: const [
-            HomeScreen(),
-            CategoryScreen(),
-            FavoritesScreen(),
-            ProfileScreen(),
-          ],
-        ),
-        bottomNavigationBar: Consumer<FavoritePlantListProvider>(
-          builder: (context, favoritePlantListProvider, child) {
-            return BottomNavBar(
-              onTap: (index) {
-                setState(() {
-                  currentBottomNavIndex = index;
-                  pageController.jumpToPage(index);
-                });
-              },
-              currentBottomNavIndex: currentBottomNavIndex,
-              badgeContent:
-                  favoritePlantListProvider.plantIds.length.toString(),
-            );
-          },
-        ),
+    return Scaffold(
+      key: scaffoldKey,
+      body: PageView(
+        controller: pageController,
+        physics: const NeverScrollableScrollPhysics(),
+        children: const [
+          HomeScreen(),
+          CategoryScreen(),
+          FavoritesScreen(),
+          ProfileScreen(),
+        ],
+      ),
+      bottomNavigationBar: Consumer<FavoritePlantListProvider>(
+        builder: (context, favoritePlantListProvider, child) {
+          return BottomNavBar(
+            onTap: (index) {
+              setState(() {
+                currentBottomNavIndex = index;
+                pageController.jumpToPage(index);
+              });
+            },
+            currentBottomNavIndex: currentBottomNavIndex,
+            badgeContent:
+                favoritePlantListProvider.plantIds.length.toString(),
+          );
+        },
       ),
     );
   }
