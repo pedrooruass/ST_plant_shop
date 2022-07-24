@@ -1,10 +1,14 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/resources/constants.dart';
 import 'package:training_app_clean/repositories/auth_repository.dart';
 import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+  const SignUpScreen({Key? key, required this.onClickedSignIn})
+      : super(key: key);
+
+  final VoidCallback onClickedSignIn;
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
@@ -51,18 +55,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 decoration: const InputDecoration(labelText: 'Password'),
               ),
             ),
-            SizedBox(
-              height: 50,
-              width: size.width,
-              child: TextFormField(
-                controller: passwordController,
-                decoration: const InputDecoration(labelText: 'Confirm Password'),
-              ),
-            ),
             const SizedBox(height: defaultPadding / 2),
             ElevatedButton(
               onPressed: () {
                 AuthRepository.signUpWithEmailAndPassword(
+                  context: context,
                   email: emailController.text,
                   password: passwordController.text,
                 );
@@ -71,17 +68,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 primary: AppColors.unselectedCategoryColor,
               ),
               child: const Text('Sign Up'),
-            )
+            ),
+            const SizedBox(height: defaultPadding / 2),
+            RichText(
+              text:  TextSpan(
+                text: 'Already has an account?  ',
+                style: const TextStyle(color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Sign In',
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = widget.onClickedSignIn,
+                    style: const TextStyle(
+                      color: AppColors.primaryColor,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
-
-  // Future signIn() async {
-  //   await FirebaseAuth.instance.signInWithEmailAndPassword(
-  //     email: emailController.text.trim(),
-  //     password: passwordController.text.trim(),
-  //   );
-  // }
 }

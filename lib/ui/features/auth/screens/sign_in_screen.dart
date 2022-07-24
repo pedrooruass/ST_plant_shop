@@ -1,11 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/resources/constants.dart';
 import 'package:training_app_clean/repositories/auth_repository.dart';
 import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class SignInScreen extends StatefulWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+  const SignInScreen({Key? key, required this.onClickedSignUp})
+      : super(key: key);
+
+  final VoidCallback onClickedSignUp;
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -56,6 +59,7 @@ class _SignInScreenState extends State<SignInScreen> {
             ElevatedButton(
               onPressed: () {
                 AuthRepository.signInWithEmailAndPassword(
+                  context: context,
                   email: emailController.text,
                   password: passwordController.text,
                 );
@@ -64,7 +68,25 @@ class _SignInScreenState extends State<SignInScreen> {
                 primary: AppColors.primaryColor,
               ),
               child: const Text('Sign In'),
-            )
+            ),
+            const SizedBox(height: defaultPadding / 2),
+            RichText(
+              text: TextSpan(
+                text: 'No account?  ',
+                style: const TextStyle(color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Sign Up',
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = widget.onClickedSignUp,
+                    style: const TextStyle(
+                      color: AppColors.unselectedCategoryColor,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

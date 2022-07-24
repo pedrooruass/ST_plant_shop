@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:training_app_clean/application/providers/auth_provider.dart';
-import 'package:training_app_clean/ui/features/auth/screens/log_in_screen.dart';
+import 'package:training_app_clean/ui/features/auth/screens/welcome_screen.dart';
 import 'package:training_app_clean/ui/features/main/main_screen.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -27,7 +27,7 @@ class AuthScreen extends StatelessWidget {
             } else if (snapshot.hasData) {
               return const MainScreen();
             } else {
-              return LogInScreen();
+              return const WelcomeScreen();
             }
           },
         ),

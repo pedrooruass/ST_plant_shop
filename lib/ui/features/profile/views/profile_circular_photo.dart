@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:training_app_clean/domain/resources/constants.dart';
 import 'package:training_app_clean/ui/theme/app_colors.dart';
+
 class ProfileCircularPhoto extends StatelessWidget {
   const ProfileCircularPhoto({
     Key? key,
@@ -8,7 +9,7 @@ class ProfileCircularPhoto extends StatelessWidget {
   }) : super(key: key);
 
   final String image;
-  
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -23,7 +24,7 @@ class ProfileCircularPhoto extends StatelessWidget {
           Container(
             height: 40,
             width: 40,
-            decoration:  BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.black54,
               borderRadius: BorderRadius.all(
                 Radius.circular(30),
@@ -35,7 +36,10 @@ class ProfileCircularPhoto extends StatelessWidget {
                 )
               ],
             ),
-            child: const Icon(Icons.settings, color: Colors.white),
+            child: const Icon(
+              Icons.settings,
+              color: Colors.white,
+            ),
           ),
         ],
       ),
