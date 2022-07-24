@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:training_app_clean/application/providers/basket_plant_list_provider.dart';
+import 'package:training_app_clean/application/providers/cart_plant_list_provider.dart';
 import 'package:training_app_clean/domain/entities/plant.dart';
 import 'package:training_app_clean/ui/theme/app_colors.dart';
 

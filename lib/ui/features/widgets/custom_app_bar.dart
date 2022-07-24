@@ -1,5 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:training_app_clean/application/providers/cart_plant_list_provider.dart';
 import 'package:training_app_clean/domain/resources/constants.dart';
 import 'package:training_app_clean/ui/features/cart/screens/cart_screen.dart';
 
@@ -40,33 +42,47 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           : title,
       actions: haveCart
           ? [
-              Padding(
-                padding: const EdgeInsets.only(right: defaultPadding / 2),
-                child: IconButton(
-                  icon: Badge(
-                    badgeContent: const Text(
-                      '0',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-                    ),
-                    child: const Icon(
-                      Icons.shopping_cart,
-                      size: 30,
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const CartScreen(),
-                      ),
-                    );
-                  },
-                ),
+              const Padding(
+                padding: EdgeInsets.only(right: defaultPadding / 2),
+                child: CartWithBadge(),
               ),
             ]
           : null,
     );
+  }
+}
+
+class CartWithBadge extends StatelessWidget {
+  const CartWithBadge({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<CartPlantListProvider>(
+        builder: (context, cartPlantListProvider, child) {
+      return IconButton(
+        icon: Badge(
+          badgeContent: Text(
+            cartPlantListProvider.plantIds.length.toString(),
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+            ),
+          ),
+          child: const Icon(
+            Icons.shopping_cart,
+            size: 30,
+          ),
+        ),
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const CartScreen(),
+            ),
+          );
+        },
+      );
+    });
   }
 }

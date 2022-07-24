@@ -20,12 +20,20 @@ class CartPromoCodeContainer extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Text(
-            'Promo Code',
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.black38,
-              fontWeight: FontWeight.w500,
+          SizedBox(
+            width: 190,
+            child: TextFormField(
+              decoration: const InputDecoration(
+                border: InputBorder.none,
+                hintText: 'Promo Code',
+                hintStyle: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black38,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              style: const TextStyle(color: AppColors.primaryColor),
+              cursorColor: AppColors.primaryColor,
             ),
           ),
           const Spacer(),

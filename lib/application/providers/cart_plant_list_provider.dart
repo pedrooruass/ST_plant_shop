@@ -34,4 +34,6 @@ class CartPlantListProvider extends ChangeNotifier {
   bool isPlantOnCart(String plantId) {
     return plantIds.contains(plantId);
   }
+
+
 }

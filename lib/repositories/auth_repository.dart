@@ -1,25 +1,28 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthRepository {
-  final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  static final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
-  Future<bool> signInWithEmailAndPassword(
-      String email, String password) async {
-    final authResult = await firebaseAuth.signInWithEmailAndPassword(
-        email: email, password: password);
-    return authResult.user != null;
+  static Future<bool> signInWithEmailAndPassword(
+      {required String email, required String password}) async {
+    try {
+      final authResult = await firebaseAuth.signInWithEmailAndPassword(
+          email: email, password: password);
+      return authResult.user != null;
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      return false;
+    }
   }
 
-
-  Future<bool> signUpWithEmailAndPassword(
-      String email, String password) async {
+  static Future<bool> signUpWithEmailAndPassword(
+      {required String email, required String password}) async {
     final authResult = await firebaseAuth.createUserWithEmailAndPassword(
         email: email, password: password);
     return authResult.user != null;
   }
 
-
-  Future<void> signOut() async {
+  static Future<void> signOut() async {
     await firebaseAuth.signOut();
   }
 
@@ -27,5 +30,4 @@ class AuthRepository {
     final currentUser = firebaseAuth.currentUser;
     return currentUser != null;
   }
-
 }

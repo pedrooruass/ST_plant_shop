@@ -75,4 +75,13 @@ class PlantListProvider extends ChangeNotifier {
         )
         .toList();
   }
+
+  double totalPrice({required List<Plant> plants}) {
+    double total = 0;
+
+    for(int i = 0; i < plants.length; i++) {
+      total += plants[i].price;
+    }
+    return total;
+  }
 }

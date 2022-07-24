@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_app_clean/domain/resources/constants.dart';
+import 'package:training_app_clean/repositories/auth_repository.dart';
 import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class ProfileTileSubScreens extends StatelessWidget {
@@ -19,6 +19,9 @@ class ProfileTileSubScreens extends StatelessWidget {
     return Column(
       children: [
         ListTile(
+          onTap: isSignOut
+              ? () => AuthRepository.signOut()
+              : null,
           leading: Icon(icon, color: isSignOut ? Colors.red : AppColors.primaryColor),
           trailing: isSignOut
               ? null
