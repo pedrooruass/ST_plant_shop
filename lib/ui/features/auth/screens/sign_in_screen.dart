@@ -80,7 +80,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     recognizer: TapGestureRecognizer()
                       ..onTap = widget.onClickedSignUp,
                     style: const TextStyle(
-                      color: AppColors.unselectedCategoryColor,
+                      color: AppColors.secondaryColor,
                       decoration: TextDecoration.underline,
                     ),
                   ),

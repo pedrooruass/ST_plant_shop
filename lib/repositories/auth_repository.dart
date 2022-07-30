@@ -5,12 +5,15 @@ class AuthRepository {
   static final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
   static Future<bool> signInWithEmailAndPassword(
-      {required BuildContext context,required String email, required String password}) async {
+      {required BuildContext context,
+      required String email,
+      required String password}) async {
     //     showDialog(
     //   context: context,
     //   barrierDismissible: false,
     //   builder: (context) => const Center(child: CircularProgressIndicator(color: AppColors.primaryColor)),
     // );
+
     try {
       final authResult = await firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
@@ -25,7 +28,8 @@ class AuthRepository {
   }
 
   static Future<bool> signUpWithEmailAndPassword(
-      {required BuildContext context,
+      {required GlobalKey<FormState> formKey,
+      required BuildContext context,
       required String email,
       required String password}) async {
     // showDialog(
@@ -33,6 +37,9 @@ class AuthRepository {
     //   barrierDismissible: false,
     //   builder: (context) => const Center(child: CircularProgressIndicator(color: AppColors.primaryColor)),
     // );
+
+    final isValid = formKey.currentState!.validate();
+    if (!isValid) return false;
     try {
       final authResult = await firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
@@ -40,7 +47,7 @@ class AuthRepository {
     } on FirebaseAuthException catch (e) {
       print(e);
       return false;
-    } 
+    }
     // finally {
     //   Navigator.of(context).pop(); // is not working
     // }

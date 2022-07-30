@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 
 class CartPlantListProvider extends ChangeNotifier {
-  List<String> plantIds = [
-    '1',
-  ];
+  List<String> plantIds = [];
 
   void togglePlantOnCart(String plantId) {
     if (isPlantOnCart(plantId)) {
       removePlantOnCart(plantId);
-    }else{
+    } else {
       addPlantOnCart(plantId);
     }
     notifyListeners();
   }
+
   void addPlantOnCart(String plantId) {
     if (isPlantOnCart(plantId)) {
       // make it just to add 1 more to the quantity of that plant
-    }else{
+    } else {
       plantIds.add(plantId);
     }
     notifyListeners();
@@ -26,6 +25,7 @@ class CartPlantListProvider extends ChangeNotifier {
     plantIds.remove(plantId);
     notifyListeners();
   }
+
   void removeAll() {
     plantIds.clear();
     notifyListeners();
@@ -34,6 +34,4 @@ class CartPlantListProvider extends ChangeNotifier {
   bool isPlantOnCart(String plantId) {
     return plantIds.contains(plantId);
   }
-
-
 }

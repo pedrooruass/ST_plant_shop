@@ -32,7 +32,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               ),
               cardColor: currentIndex == 0
                   ? AppColors.primaryColor
-                  : AppColors.unselectedCategoryColor,
+                  : AppColors.secondaryColor,
               onCategoryTap: () {
                 setState(() {
                   currentIndex = 0;
@@ -45,7 +45,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 name: 'Trees',
                 id: '2',
               ),
-              cardColor: currentIndex == 1 ? AppColors.primaryColor : AppColors.unselectedCategoryColor,
+              cardColor: currentIndex == 1 ? AppColors.primaryColor : AppColors.secondaryColor,
               onCategoryTap: () {
                 setState(() {
                   currentIndex = 1;
@@ -58,7 +58,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 name: 'Creepers',
                 id: '3',
               ),
-              cardColor: currentIndex == 2 ? AppColors.primaryColor :AppColors.unselectedCategoryColor,
+              cardColor: currentIndex == 2 ? AppColors.primaryColor :AppColors.secondaryColor,
               onCategoryTap: () {
                 setState(() {
                   currentIndex = 2;

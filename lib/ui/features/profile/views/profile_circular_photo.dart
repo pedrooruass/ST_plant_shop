@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:training_app_clean/domain/resources/constants.dart';
 import 'package:training_app_clean/ui/theme/app_colors.dart';
 
 class ProfileCircularPhoto extends StatelessWidget {

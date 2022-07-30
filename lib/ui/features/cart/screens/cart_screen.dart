@@ -9,7 +9,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: AppColors.basketBackgroundBasketScreen,
+      backgroundColor: AppColors.cartBackgroundScreenColor,
       appBar: CartAppBar(),
       body: CartBody(),
     );
