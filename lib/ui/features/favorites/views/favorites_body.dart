@@ -22,7 +22,12 @@ class FavoritesBody extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           children: [
             ListView.builder(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.only(
+                bottom: 52,
+                left: 12,
+                right: 12,
+                top: 12,
+              ),
               itemCount: favoritePlantListProvider.plantIds.length,
               itemBuilder: (context, index) {
                 return FavoriteCard(
@@ -31,9 +36,12 @@ class FavoritesBody extends StatelessWidget {
               },
             ),
             AddAllToCart(
-              onTap: (){
-                for(int i = 0; i < favoritePlantListProvider.plantIds.length; i++){
-                  basketPlantListProvider.addPlantOnCart(favoritePlantListProvider.plantIds[i]);
+              onTap: () {
+                for (int i = 0;
+                    i < favoritePlantListProvider.plantIds.length;
+                    i++) {
+                  basketPlantListProvider
+                      .addPlantOnCart(favoritePlantListProvider.plantIds[i]);
                 }
                 // basketPlantListProvider.addPlantOnBasket(plantId);
               },
@@ -49,7 +57,8 @@ class FavoritesBody extends StatelessWidget {
 class AddAllToCart extends StatelessWidget {
   const AddAllToCart({
     Key? key,
-    required this.plantIdsLength, required this.onTap,
+    required this.plantIdsLength,
+    required this.onTap,
   }) : super(key: key);
   final int plantIdsLength;
   final void Function() onTap;
